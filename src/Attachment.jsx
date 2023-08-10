@@ -24,7 +24,9 @@ export default function Attachment({attachments}){
                 el.type == "sticker"?
                 <div key={i}>
                     <img src={el.sticker.images.slice(-1)[0].url} alt="" /> 
-                 </div>:
+                 </div>: 
+                 el.type == "audio_message"?
+                 <audio controls src={el.audio_message.link_mp3}><a href={el.audio_message.link_mp3}>{el.audio_message.link_mp3}</a></audio>:
                 <div key={i}>
                     {el.type}
                     ____________
