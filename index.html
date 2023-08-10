@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
+/>
+    <title>Messenger</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/javascript">
+      let globalCallBack
+    function GgetConversations(user, callback) {
+      var script = document.createElement('script');
+      script.src = "https://api.vk.com/method/messages.getConversations?count=50&v=5.95&extended=1&callback=callbackVK&access_token=" + user;
+      document.getElementsByTagName("head")[0].appendChild(script);
+      globalCallBack = callback
+    }
+
+    function GgetConversationsById(id, user, callback){
+      var script = document.createElement('script');
+      script.src = "https://api.vk.com/method/messages.getHistory?peer_id="+id+"&v=5.95&callback=callbackVK&extended=1&start_message_id=-1&count=200&access_token=" + user;
+      document.getElementsByTagName("head")[0].appendChild(script);
+      globalCallBack = callback
+    }
+
+    function callbackVK(reuslt){
+      
+      console.log(reuslt);
+      globalCallBack(reuslt)
+    }
+    </script>
+    <script type="module" src="/src/index.jsx"></script>
+		
+    <!--
+    This script places a badge on your repl's full-browser view back to your repl's cover
+    page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+    teal, blue, blurple, magenta, pink!
+    -->
+
+  </body>
+</html>
