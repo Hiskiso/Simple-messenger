@@ -1,4 +1,3 @@
-import "./Message.css";
 import Attachment from "./Attachment";
 import { SimpleCell, Avatar } from "@vkontakte/vkui";
 import MessageElement from "./MessageElement";
