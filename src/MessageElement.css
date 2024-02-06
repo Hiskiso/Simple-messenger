@@ -1,0 +1,31 @@
+.contentContainer {
+  display: flex;
+}
+
+.messageContainer{
+    background: var(--vkui--color_background_content--active);
+    padding: 9px;
+    margin: 12px;
+    border-radius: 10px;
+    display: flex;
+    
+ justify-content: space-between;
+
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 4px 20px;
+}
+
+.messageText {
+    overflow-wrap: anywhere;
+}
+
+.time{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}

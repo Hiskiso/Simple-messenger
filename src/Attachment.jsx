@@ -1,6 +1,8 @@
 export default function Attachment({attachments}){
 
-
+function openPhotoInNewTab(url){
+    window.open(url, '_blank').focus();
+}
 
     return(
         <div>{
@@ -13,7 +15,7 @@ export default function Attachment({attachments}){
                 </div> : 
                  el.type == "photo"?
                  <div key={i}>
-                    <img src={el.photo.sizes.slice(-1)[0].url} alt="" /> 
+                    <img onClick={()=>{openPhotoInNewTab(el.photo.sizes.slice(-1)[0].url)}} src={el.photo.sizes[0].url} alt="" /> 
                  </div>:
                  el.type == "audio"?
                 <div>AUDIO: <input value={el.audio.artist + " " + el.audio.title}></input></div> :

@@ -59,7 +59,6 @@ const goBack = React.useCallback(() => {
               <PanelHeader  before={
               <PanelHeaderBack
                 onClick={() => setActivePanel('users')}
-                label={"<"}
               />
             }>Messenger</PanelHeader>
               <Messenger user={currentUser} openDialog={openDialog}/>
@@ -68,7 +67,6 @@ const goBack = React.useCallback(() => {
               <PanelHeader  before={
               <PanelHeaderBack
                 onClick={() => setActivePanel('messenger')}
-                label={"<"}
               />
             } >Dialog</PanelHeader>
               <Dialog id={currentDialog} user={currentUser}/>
